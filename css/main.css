@@ -1,0 +1,20 @@
+.capitalize {
+   text-transform: capitalize;
+}
+
+.pokemon-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.pokemon-pic {
+  width: 96px;
+  text-align: center;
+}
+
+.pokemon-pic p {
+  margin: 0;
+  text-align: center;
+}
