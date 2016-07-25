@@ -3,10 +3,54 @@
 angular.module('myApp',[])
 .controller('appCtrl', function($scope, $http){
 
-  var nameList = [];
-  $scope.imageList = [];
+  //set options
+  $scope.colors = [{
+      value: '1',
+      label: 'Black'
+    },
+    {
+      value: '2',
+      label: 'Blue'
+    },
+    {
+      value: '3',
+      label: 'Brown'
+    },
+    {
+      value: '4',
+      label: 'Gray'
+    },
+    {
+      value: '5',
+      label: 'Green'
+    },
+    {
+      value: '6',
+      label: 'Pink'
+    },
+    {
+      value: '7',
+      label: 'Purple'
+    },
+    {
+      value: '8',
+      label: 'Red'
+    },
+    {
+      value: '9',
+      label: 'White'
+    },
+    {
+      value: '10',
+      label: 'Yellow'
+    },
+  ];
 
   $scope.getItemByColor = function(colorIndex){
+
+    var nameList = [];
+    $scope.imageList = [];
+
     $http.get('http://pokeapi.co/api/v2/pokemon-color/'+colorIndex)
         .then(function(data){
           console.log(data.data);

@@ -8,16 +8,11 @@
 <body>
 
   <div ng-app='myApp' ng-controller='appCtrl'>
-    <select ng-model="colorIndex" ng-change='getItemByColor(colorIndex);'>
-      <option></option>
-      <option value='1'>black</option>
-      <option value='2'>blue</option>
-      <option value='3'>3</option>
-      <option value='4'>4</option>
-      <option value='5'>green</option>
-      <option value='6'>pink</option>
+    <select ng-model='colorIndex' ng-change='getItemByColor(colorIndex.value);'
+            ng-options='color as color.label for color in colors'>
+        <option value="" disabled selected>Select a color</option>
     </select>
-    <h1 class='capitalize'>{{ list.name }}</h1>
+    <h1 class='capitalize'>{{ colorIndex.label }}</h1>
     <div class='pokemon-div'>
       <spna ng-repeat='image in imageList' class='pokemon-pic'>
         <img ng-src='{{ image.url }}' />
